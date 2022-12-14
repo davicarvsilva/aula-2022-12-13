@@ -1,14 +1,19 @@
 import { Request, Response } from 'express';
 
 import { DadosUseCase } from '../use_cases/dados_usecase'
+import { IUseCase } from '../use_cases/IUseCase';
 
 class Dado_Controller {
+    dados_usecase: IUseCase;
+
+    constructor(dados_usecase: IUseCase) {
+        this.dados_usecase = dados_usecase;
+    }
     listar_dados(req: Request, resp: Response) {
 
-        const dados_usecase = new DadosUseCase();
-        const dados = dados_usecase.recuperaDados();
+        const dados = this.dados_usecase.recuperaDados();
         return resp.status(200).json(dados)
     }
 }
 
-export default new Dado_Controller();
+export { Dado_Controller };
