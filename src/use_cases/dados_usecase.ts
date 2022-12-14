@@ -1,9 +1,18 @@
-import { IDados } from '../domain/Dados'
+import { IDados, Dados } from '../domain/Dados'
+import { IRepository } from '../repository/IRepository';
 import { IUseCase } from './IUseCase';
 
 class DadosUseCase implements IUseCase {
+    repo: IRepository;
+    dados: Dados;
+
+    constructor(repo: IRepository) {
+        this.repo = repo;
+    }
+
     recuperaDados(): IDados {
-        return { msg: 'Oi' }
+        const dados = new Dados('Oi');
+        return dados;
     }
 }
 

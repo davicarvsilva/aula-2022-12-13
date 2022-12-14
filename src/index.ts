@@ -1,10 +1,12 @@
 import express, { Router } from "express";
 
-import dadosController from './controller/dado_Controller';
+import { criaControllerFactory } from "./infra/factories";
 
 const app = express();
 
 const route = Router();
+const dadosController = criaControllerFactory();
+
 route.get("/dados", dadosController.listar_dados);
 
 app.use(express.json());
