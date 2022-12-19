@@ -1,7 +1,8 @@
-import { IDados } from "../domain/Dados"
+import { ICilindro } from "../domain/Cilindro"
 
 interface IUseCase {
-    recuperaDados(): IDados;
+    recuperarCilindro(): ICilindro;
+    verificaNecessidadeNovaAvaliacao(): string;
 }
 
 export { IUseCase }

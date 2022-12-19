@@ -5,9 +5,9 @@ import { criaControllerFactory } from "./infra/factories";
 const app = express();
 
 const route = Router();
-const dadosController = criaControllerFactory();
+const cilindrosController = criaControllerFactory();
 
-route.get("/dados", dadosController.listar_dados);
+route.get("/cilindros", cilindrosController.listar_cilindro);
 
 app.use(express.json());
 app.use(route);

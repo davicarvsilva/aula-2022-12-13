@@ -1,23 +1,22 @@
-import { Dado_Controller } from "../controller/dado_Controller";
-import { DadosRepository } from "../repository/dados_repository";
-import { DadosUseCase } from "../use_cases/dados_usecase";
+import { Cilindro_Controller } from "../controller/cilindro_Controller";
+import { CilindroRepository } from "../repository/cilindro_repository";
+import { CilindroUseCase } from "../use_cases/cilindros_usecase";
 
 
 function criaRepositoryFactory() {
-    const repo = new DadosRepository();
+    const repo = new CilindroRepository();
     return repo;
 }
 
-
 function criaUseCaseFactory() {
     const repo = criaRepositoryFactory();
-    const useCase = new DadosUseCase(repo);
+    const useCase = new CilindroUseCase(repo);
     return useCase;
 }
 
 function criaControllerFactory() {
     const usecase = criaUseCaseFactory();
-    const controller = new Dado_Controller(usecase);
+    const controller = new Cilindro_Controller(usecase);
     return controller;
 }
 

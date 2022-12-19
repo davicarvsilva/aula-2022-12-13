@@ -1,7 +1,7 @@
-import { IDados } from "../domain/Dados";
+import { ICilindro } from "../domain/Cilindro";
 
 interface IRepository {
-    read(): Array<IDados>;
+    read(): Array<ICilindro>;
 }
 
 export { IRepository }
